@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ {{ player.name }}
+
+
+</br>
+ {{ level.text }}
+</br>
+Enter your answer
+
+
+        <form id="ans" method="post" action="/answer/">
+            {% csrf_token %}
+            Answer: <input type="text" name="ans" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+
+</html>
