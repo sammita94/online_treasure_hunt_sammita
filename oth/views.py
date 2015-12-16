@@ -14,11 +14,13 @@ def index(request):
 	return render(request, 'level.html', {'player': player , 'level': level})
     return render(request, 'index_page.html')
 
+@login_required
 def display(request):
     player = models.player.objects.get(user_id=request.user.pk)
     return render(request, 'display.html' , {'player': player })
 
 
+@login_required
 def save_profile(backend, user, response, *args, **kwargs):
     if backend.name == 'facebook':
         profile = user
@@ -53,6 +55,7 @@ def save_profile(backend, user, response, *args, **kwargs):
     else:
         return render(request, 'index.html', {})"""
 
+@login_required
 def answer(request):
     if request.method == 'POST':
         answer = request.POST.get('ans')
