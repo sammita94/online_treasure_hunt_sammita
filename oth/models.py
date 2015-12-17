@@ -16,6 +16,7 @@ class level(models.Model):
 	#photo = models.ImageField(upload_to='/static/images/')
 	text = models.TextField()
 	answer = models.CharField(max_length=200)
+	numuser = models.IntegerField(default = 0)
 
 	def __unicode__(self):
 		return self.text

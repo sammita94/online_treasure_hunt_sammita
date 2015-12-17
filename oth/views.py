@@ -6,6 +6,7 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import models
 from django.contrib import messages
 from oth import models
+from facepy import GraphAPI
 m_level = 1
 f_user = ""
 
@@ -78,17 +79,20 @@ def answer(request):
     try:
         level = models.level.objects.get(l_number=player.max_level)
     except:
-	return render(request, 'finish.html' , {'player': player})
-    right = 0	
-    print answer
-    print level.answer
+	return render(request, 'finish.html' , {'player': player})	
+    #print answer
+    #print level.answer
     if answer == level.answer:
-	print level.answer
-	right = 1;		
+	#print level.answer
 	player.max_level = player.max_level + 1
+	level.numuser = level.numuser + 1
+	level.save()
+	print level.numuser
 	#print player.max_level
 	global m_level
-	global f_user        
+	global f_user
+	#print f_user
+	#print m_level        
 	if m_level<player.max_level:
 	    m_level=player.max_level
 	    f_user = player.name	

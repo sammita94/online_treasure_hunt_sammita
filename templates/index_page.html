@@ -1,2 +1,131 @@
-<li><a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a></li>
-<li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
+<!DOCTYPE HTML>
+<head>
+<title>Online Treasure Hunt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
+<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/Chart.js"></script>
+ <script type="text/javascript" src="js/jquery.easing.js"></script>
+ <script type="text/javascript" src="js/jquery.ulslide.js"></script>
+
+</head>
+<body>                 
+        <div class="wrap">   
+          <div class="header">
+              <div class="header_top">
+                      <div class="menu">
+                          
+                           <h2> Online Treasure Hunt</h2>
+                            <script type="text/javascript" src="web/js/responsive-nav.js"></script>
+                        </div>  
+                      <div class="profile_details">
+                               <div id="loginContainer">
+                                  
+                                    <div id="loginBox">                
+                                      
+                                </div>
+                            </div>
+                                  
+                             <div class="clear"></div>          
+                        </div>  
+                      <div class="clear"></div>              
+                   </div>
+            </div>                           
+    </div>
+    </div>
+      <div class="main">  
+        <div class="wrap">           
+           <div class="column_left">              
+                 <div class="menu_box">
+                     <h3>Rules</h3>
+                       <div class="menu_box_list">
+                            <ul>
+                                <li><a >You  will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</a></li>
+                                <li><a >Make sure that you type in all the answers in lowercase characters without any space between the words.</a></li>
+                                <li><a >Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</a></li>
+                                <li><a >Stay in touch with our official hint page which may help you in case you get stuck on any of the levels.</a></li>
+                                                        
+                            </ul>
+                      </div>
+                 </div>
+                
+                    
+                     
+                               
+                    
+                  
+                       
+            </div> 
+            
+            <div class="column_middle">
+         <!--    <div class="chart" style="margin-top:0;margin-bottom:30px;">
+                       <img src="images/logo.png">
+                                         
+                        <div class="chart_list">
+                          <ul>
+                            <li><a href="#" class="red"></a></li>
+                            <li><a href="#" class="purple"></a></li>
+                            <li><a href="#" class="yellow"></a></li>
+                            <li><a href="#" class="blue"></a></li>
+                            <div class="clear"></div>   
+                          </ul>
+                       </div>
+                       
+                  </div> -->
+                <div class="column_right_grid sign-in">
+                    <div class="sign_in">
+                       <h3><span>Sign in</span>through your Facebook account to start playing!</h3>
+                        
+                                             
+                       </div>
+                      <div class="signin_facebook">
+                         <p><a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">  <i> <img src="images/facebook.png" alt="" /></i>Sign in with facebook</a></p>
+                      </div>
+			<div class="signin_facebook">
+                         <p><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">  <i> <img src="images/google_plus.png" alt="" /></i>Sign in with google</a></p>
+                      </div>
+                   </div>
+                     <div class="social_networks">
+                            <ul>
+                                <li><a href="https://www.facebook.com/muktinitdurgapur" class="facebook"><i><img src="images/facebook_icon.png" alt="" /></i> <span> Mukti 15 Facebook page</span><div class="clear"></div></a></li>
+                                
+                            <!--    <li><a href="#" class="googleplus"><i><img src="images/google+.png" alt="" /></i> <span style='padding-right:10px;'>Mukti 15 Youtube Channel</span><div class="clear"></div></a></li> -->
+                            </ul>
+                    </div>
+                           
+                               
+               
+            </div>
+            
+            <div class="column_right">
+            <div class="column_right_grid date_events" style="margin-top:0;">
+                          <h3> Prizes </h3>
+                               <h4> INR</h4>
+                                <ul id="slide" class="event_dates">                            
+                                    <li>5k</li>
+                                    
+                                </ul>
+                                 <h4>  up for grabs!</h4><h2> Hurry </h2>                                                         
+                           
+                    </div>
+               
+                 
+                  
+                   
+                   
+        <div class="clear"></div>
+     </div>
+     
+
+   </div>
+   
+   </div>
+   
+    
+</body>
+
+</html>
