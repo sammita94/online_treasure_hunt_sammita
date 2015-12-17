@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import models
 from oth import models
 m_level = 1
@@ -20,7 +21,7 @@ def display(request):
     return render(request, 'display.html' , {'player': player })
 
 
-@login_required
+
 def save_profile(backend, user, response, *args, **kwargs):
     if backend.name == 'facebook':
         profile = user
@@ -60,22 +61,28 @@ def answer(request):
     if request.method == 'POST':
         answer = request.POST.get('ans')
     player = models.player.objects.get(user_id=request.user.pk)
-    level = models.level.objects.get(l_number=player.max_level)
-    print answer
-    print level.answer
-    if answer == level.answer:
-	print level.answer
-	player.max_level = player.max_level + 1
+    try:
+        level = models.level.objects.get(l_number=player.max_level)	
+        print answer
+        print level.answer
+        if answer == level.answer:
+	   	print level.answer
+		player.max_level = player.max_level + 1
 	#print player.max_level
-	global m_level
-	global f_user        
-	if m_level<player.max_level:
-	    m_level=player.max_level
-	    f_user = player.name	
-	player.save()
-	level = models.level.objects.get(l_number=player.max_level)
-	return render(request, 'level.html' , {'player': player , 'level': level})
-    return render(request, 'level.html' , {'player': player , 'level': level})
+		global m_level
+		global f_user        
+		if m_level<player.max_level:
+	    	    m_level=player.max_level
+	            f_user = player.name	
+	   	    player.save()
+	try:	
+		level = models.level.objects.get(l_number=player.max_level)
+		return render(request, 'level.html' , {'player': player , 'level': level})
+	except:
+		return render(request, 'finish.html' , {'player': player})
+    	return render(request, 'level.html' , {'player': player , 'level': level})
+    except:
+	return render(request, 'finish.html' , {'player': player})
 
 
        
