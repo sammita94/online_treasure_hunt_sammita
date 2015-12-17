@@ -38,9 +38,10 @@ def save_profile(backend, user, response, *args, **kwargs):
     elif backend.name == 'google-oauth2':
         profile = user
         try:
-            player = models.player.objects.get(user=profile)
+            player = models.Player.objects.get(user=profile)
         except:
-            player = models.player(user=profile)
+            player = models.Player(user=profile)
+            player.email = user.email
             player.name = response.get('name')['givenName'] + " " + response.get('name')['familyName']
             player.save()
 
