@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be7e0ec4-6221-4bed-aa7f-75e4ac4b496d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/online_treasure_hunt/settings.py" afterPath="$PROJECT_DIR$/online_treasure_hunt/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oth/models.py" afterPath="$PROJECT_DIR$/oth/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oth/urls.py" afterPath="$PROJECT_DIR$/oth/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oth/views.py" afterPath="$PROJECT_DIR$/oth/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/finish.html" afterPath="$PROJECT_DIR$/templates/finish.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index_page.html" afterPath="$PROJECT_DIR$/templates/index_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/level.html" afterPath="$PROJECT_DIR$/templates/level.html" />
-    </list>
+    <list default="true" id="be7e0ec4-6221-4bed-aa7f-75e4ac4b496d" name="Default" comment="" />
     <ignored path="online_treasure_hunt_sammita.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/oth/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.92990655">
               <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -86,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lboard.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/lboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24271844">
+            <state vertical-scroll-proportion="-6.25">
               <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding />
             </state>
@@ -473,16 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oth/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oth/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -495,9 +476,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/lboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24271844">
+        <state vertical-scroll-proportion="-6.25">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92990655">
+          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
