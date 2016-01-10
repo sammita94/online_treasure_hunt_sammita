@@ -1,0 +1,11 @@
+{% if players %}
+            <ul>
+                {% for player in players %}
+                <li>{{ player.name }}    {{player.score}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no players present.</strong>
+        {% endif %}
+
+<li><a href="/">Go Back</a></li>

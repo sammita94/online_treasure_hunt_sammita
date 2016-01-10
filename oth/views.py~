@@ -111,5 +111,5 @@ def answer(request):
 
 @login_required()
 def lboard(request):
-    p= models.player.objects.order_by('-score')
-    return render(request, 'lboard.html', {'players': p})
+    players= models.player.objects.order_by('-score')
+    print players

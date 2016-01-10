@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^display/$', views.display , name='display'),
     url(r'^answer/$', views.answer , name='answer'),
+    url(r'^lboard/$', views.lboard , name='lboard'),
     
 ]
