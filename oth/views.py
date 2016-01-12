@@ -7,6 +7,7 @@ from django.contrib.auth import models
 from django.contrib import messages
 from oth import models
 from facepy import GraphAPI
+import datetime
 
 m_level = 1
 f_user = ""
@@ -38,6 +39,7 @@ def save_profile(backend, user, response, *args, **kwargs):
         except:
             player = models.player(user=profile)
             player.name = response.get('name')
+            player.timestamp=datetime.datetime.now()
             player.save()
     elif backend.name == 'google-oauth2':
         profile = user
@@ -45,6 +47,7 @@ def save_profile(backend, user, response, *args, **kwargs):
             player = models.player.objects.get(user=profile)
         except:
             player = models.player(user=profile)
+            player.timestamp=datetime.datetime.now()
             player.name = response.get('name')['givenName'] + " " + response.get('name')['familyName']
             player.save()
 
@@ -86,9 +89,10 @@ def answer(request):
     # print answer
     # print level.answer
     if ans == level.answer:
-        # print level.answer
+        print level.answer
         player.max_level = player.max_level + 1
         player.score = player.score + 10
+        player.timestamp = datetime.datetime.now()
         level.numuser = level.numuser + 1
         level.save()
         print level.numuser
@@ -100,7 +104,7 @@ def answer(request):
         if m_level < player.max_level:
             m_level = player.max_level
             f_user = player.name
-            player.save()
+        player.save()
         try:
             level = models.level.objects.get(l_number=player.max_level)
             return render(request, 'level.html', {'player': player, 'level': level})
@@ -111,5 +115,5 @@ def answer(request):
 
 @login_required()
 def lboard(request):
-    p= models.player.objects.order_by('-score')
+    p= models.player.objects.order_by('-score','timestamp')
     return render(request, 'lboard.html', {'players': p})

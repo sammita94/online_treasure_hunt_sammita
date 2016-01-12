@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
+import datetime
 
 
 class player(models.Model):
@@ -8,6 +9,7 @@ class player(models.Model):
     name = models.CharField(max_length=128)
     max_level = models.IntegerField(default=1)
     score = models.IntegerField(default=0)
+    timestamp = models.DateTimeField()
 
     def __unicode__(self):
         return self.name

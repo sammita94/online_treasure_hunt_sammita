@@ -1,7 +1,7 @@
 {% if players %}
             <ul>
                 {% for player in players %}
-                <li>{{ player.name }}    {{player.score}}</li>
+                <li>{{ player.name }}    {{player.score}}   {{player.timestamp}}</li>
                 {% endfor %}
             </ul>
         {% else %}
