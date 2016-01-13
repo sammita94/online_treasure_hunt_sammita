@@ -52,33 +52,9 @@ def save_profile(backend, user, response, *args, **kwargs):
             player.save()
 
 
-"""def user_login(request):
-
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request, user)
-                play = models.player.objects.get(user_id=request.user.pk)
-		level = models.level.objects.get(l_number= play.max_level)
-    		return render(request, 'level.html' , {'player': play , 'level': level})
-            else:
-                # An inactive account was used - no logging in!
-                return HttpResponse("Your account is disabled.")
-        else:
-            # Bad login details were provided. So we can't log the user in.
-            print "Invalid login details: {0}, {1}".format(username, password)
-            return HttpResponse("Invalid login details supplied.")
-
-   
-    else:
-        return render(request, 'index.html', {})"""
-
-
 @login_required
 def answer(request):
+    ans = ""
     if request.method == 'POST':
         ans = request.POST.get('ans')
     player = models.player.objects.get(user_id=request.user.pk)
@@ -89,13 +65,13 @@ def answer(request):
     # print answer
     # print level.answer
     if ans == level.answer:
-        print level.answer
+        #print level.answer
         player.max_level = player.max_level + 1
         player.score = player.score + 10
         player.timestamp = datetime.datetime.now()
         level.numuser = level.numuser + 1
         level.save()
-        print level.numuser
+        #print level.numuser
         # print player.max_level
         global m_level
         global f_user
