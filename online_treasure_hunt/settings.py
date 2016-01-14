@@ -67,12 +67,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-		'social.apps.django_app.context_processors.backends',
-	        'social.apps.django_app.context_processors.login_redirect',
+		        'social.apps.django_app.context_processors.backends',
+	            'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'online_treasure_hunt.wsgi.application'
 
@@ -111,6 +113,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+MIDDLEWARE_CLASSES += (
+    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+)
 
 AUTHENTICATION_BACKENDS = (
    'social.backends.facebook.FacebookOAuth2',
@@ -123,12 +128,13 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGIN_URL='/'
 
-#details for fb TEST
-'''SOCIAL_AUTH_FACEBOOK_KEY = 378079305720472
-SOCIAL_AUTH_FACEBOOK_SECRET = "c66053e1f77f02faf13df03be54ea856"'''
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
 
-SOCIAL_AUTH_FACEBOOK_KEY = 468935656625293
-SOCIAL_AUTH_FACEBOOK_SECRET = "d0a3b190172356be1f088150d8eda007"
+#details for fb TEST
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = 1492885351019524
+SOCIAL_AUTH_FACEBOOK_SECRET = "86f0575c3e6bffc609c42656fc43e694"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "589893822589-k9t7tft5v1627j44bdppt52gn0osbfhf.apps.googleusercontent.com"
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "q-XgrnQTeK8KHhfkQbxAR-it"

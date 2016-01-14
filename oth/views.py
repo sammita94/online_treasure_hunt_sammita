@@ -6,6 +6,8 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import models
 from django.contrib import messages
 from oth import models
+import requests.packages.urllib3
+requests.packages.urllib3.disable_warnings()
 from facepy import GraphAPI
 import datetime
 
