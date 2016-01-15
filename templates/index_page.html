@@ -1,13 +1,112 @@
-{% if user and not user.is_anonymous %}
-     <li>
-       <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-     </li>
-     <li>
-         <a href="/lboard/">Leaderboard</a></li>
-         <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
-     </li>
-{% else %}
+<!DOCTYPE html>
 
-<li><a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a></li>
-<li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
-{% endif %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/img/favicon.png">
+
+    <title>Online Treasure Hunt</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  
+    <link href="static/css/bootstrap-social.css" rel="stylesheet">
+    <link href="static/css/style_index_page.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css">
+    
+
+  </head>
+
+  <body class="bodypad">
+
+    <div class="container" >
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead fontincr">
+        <nav>
+          <ul class="nav nav-justified" >
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="http://mkti.in">Mukti website</a></li>
+            <li><a href="https://www.facebook.com/muktinitdurgapur">Mukti FB Page</a></li>
+  	         <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>           
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="margin-top:15px;background-color:#eee">
+        <h1>Online Treasure Hunt</h1>
+        <p class="lead">Login through your Facebook/Google account to start playing!</p>
+
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        
+		
+        <div class="col-lg-6 rules " style="border-left:5px solid #1B809E;"  >
+          <h2 style="color:#1B809E;font-weight:bold">Rules of the Game</h2>
+          <ul class="padsize">
+            <li >You will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</li>
+	         <li >Make sure that you type in all the answers in lowercase characters without any space between the words.</li>
+	         <li >Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</li>
+	         <li >Stay in touch with our official hint page which may help you in case you get stuck on any of the levels.</li>
+          </ul>
+          
+        </div>
+
+
+
+        <div class="col-lg-6 padleft">
+        <div class="sidebox">
+          <h2 style="font-size:40px;text-align:center">Win Prizes!</h2>
+          <p style="text-align:center;font-size:35px">Cash Prize</p>
+		      <p style="text-align:center;font-size:35px"> INR 5k</p>          
+        </div>
+        
+        <!-- <div class="bgscroll col-lg-4 loginbu"style="float:right;padding:20px;text-align:center;margin-top:10px"> -->
+        <div class="sidebox" style="margin-top:10px">
+        <p style="font-size:20px">Login to Start playing!</p>
+        <p><button onclick="window.location='{% url 'social:begin' 'facebook' %}?next={{ request.path }}';" class="btn-lg btn-facebook"><i class="fa fa-facebook"></i> | Login with Facebook</button></p>
+        <p><button onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';" class="btn-lg btn-google"><i class="fa fa-google"></i> | Login with Google</button></p>
+        </div>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; 2016 GNU/Linux users group, NIT Durgapur</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+  </body>
+</html>
