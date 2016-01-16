@@ -36,16 +36,16 @@
       <div class="row">
         <h1 class="lboardh1">Leaderboard</h1>
         
-        <div class="col-lg-8" style="margin:20px 150px 20px 170px">
+        <div class="col-lg-8" style="margin:20px 150px 20px 170px;">
           
             {% if players %}
-            <table  class="table table-hover table-striped table-bordered "  style="font-weight:bold;">
+            <table  class="table table-hover table-striped table-bordered "  style="font-weight:bold;box-shadow: 0px 0px 8px #000">
                 <tr style="background-color:#457fca;color:#fff;font-size:18px"> 
-                	<th >Player Name</th><th>Player Score</th><th>Timestamp</th>
+                	<th>#</th><th >Player Name</th><th>Player Score</th><th>Last level Crossed at</th>
                 </tr>
                 {% for player in players %}
                 <tr>
-                	<td>{{ player.name }}</td>    <td> {{player.score}} </td>    <td> {{player.timestamp}}</td>
+                	<td>0</td><td>{{ player.name }}</td>    <td> {{player.score}} </td>    <td> {{player.timestamp}}</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -57,7 +57,6 @@
 
         </div>
 
-      
       </div>
 
       <!-- Site footer -->
