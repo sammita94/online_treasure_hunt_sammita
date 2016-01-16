@@ -94,4 +94,19 @@ def answer(request):
 @login_required()
 def lboard(request):
     p= models.player.objects.order_by('-score','timestamp')
+    cur_rank = 1
+    counter = 0
+
+    for pl in p:
+        if counter < 1:
+            pl.rank = cur_rank
+        else:
+            if pl.score == p[counter-1].score:
+                pl.rank = cur_rank
+            else:
+                cur_rank += 1
+                pl.rank = cur_rank
+        counter += 1
+
+
     return render(request, 'lboard.html', {'players': p})

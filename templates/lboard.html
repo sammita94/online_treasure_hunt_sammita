@@ -45,7 +45,7 @@
                 </tr>
                 {% for player in players %}
                 <tr>
-                	<td>0</td><td>{{ player.name }}</td>    <td> {{player.score}} </td>    <td> {{player.timestamp}}</td>
+                	<td>{{ player.rank }}</td><td>{{ player.name }}</td>    <td> {{player.score}} </td>    <td> {{player.timestamp}}</td>
                 </tr>
                 {% endfor %}
             </table>

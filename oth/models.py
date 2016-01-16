@@ -9,6 +9,7 @@ class player(models.Model):
     name = models.CharField(max_length=128)
     max_level = models.IntegerField(default=1)
     score = models.IntegerField(default=0)
+    rank = models.IntegerField(default=0)
     timestamp = models.DateTimeField()
 
     def __unicode__(self):
