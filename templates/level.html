@@ -1,5 +1,5 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,21 +8,19 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="static/img/favicon.png">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
 
     <title>Online Treasure Hunt</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="static/css/justified-nav.css" rel="stylesheet">
-    <link href="../static/css/justified-nav.css" rel="stylesheet">
-    
-    <link href="static/css/style_index_page.css" rel="stylesheet">
-    <link href="../static/css/style_index_page.css" rel="stylesheet">   
+    <link href="{% static 'css/justified-nav.css' %}" rel="stylesheet">
 
+    
+    <link href="{% static 'css/style_index_page.css' %}" rel="stylesheet">
+ 
 
   </head>
 
@@ -34,6 +32,7 @@
            Multiple lines will require custom code not provided by Bootstrap. -->
 
         <!--    {{ player.name }} -->
+
 {% if user and not user.is_anonymous %}
 
     <nav class="navbar navbar-default">
@@ -47,6 +46,7 @@
         <span class="icon-bar"></span>
       </button>
       <div class="navbar-brand" >Hi, <span style="font-weight:bold">{{ user.get_full_name|default:user.username }}</span>!</div>
+      <div class="navbar-brand" >Your Score :   <span style="font-weight:bold;color:#5CB85C">{{player.score}} points</span></div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,6 +54,7 @@
       <ul class="nav navbar-nav">
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="/rules">Rules</a></li>
         <li><a href="/lboard/">Leaderboard</a></li>
         <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
        </ul>
@@ -67,8 +68,6 @@
       <div class="jumbotron" style="margin-top:15px;background-color:#eee">
         <h1>Hint Picture</h1>
         <p class="lead">Look at this picture for hint</p>
-        
-
       </div>
 
       <!-- Example row of columns -->
@@ -104,6 +103,12 @@
         </form>
         </div>
 
+      <div class="col-lg-6 padleft">
+        <div class="sidebox" style="padding:15px">
+          <p style="font-size:25px;text-align:center">Number of people who crossed this level</p>
+          <p style="text-align:center;font-size:35px;color:green">{{level.numuser}}</p>          
+        </div>
+      </div>
       
       </div>
 

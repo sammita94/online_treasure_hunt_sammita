@@ -1,5 +1,5 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,23 +8,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="static/img/favicon.png">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
 
     <title>Online Treasure Hunt</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="static/css/justified-nav.css" rel="stylesheet">
+    <link href="{% static 'css/justified-nav.css' %}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,9 +32,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-  
-    <link href="static/css/bootstrap-social.css" rel="stylesheet">
-    <link href="static/css/style_index_page.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-social.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style_index_page.css' %}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css">
     
 
@@ -52,7 +52,7 @@
             <li class=""><a href="#">Home</a></li>
             <li><a href="http://mkti.in">Mukti website</a></li>
             <li><a href="https://www.facebook.com/muktinitdurgapur">Mukti FB Page</a></li>
-  	         <li><a href="#">Contact</a></li>
+             <li><a href="#">Contact</a></li>
             <li><a href="#">About</a></li>           
           </ul>
         </nav>
@@ -62,31 +62,31 @@
       <div class="jumbotron" style="margin-top:15px;background-color:#eee">
         <h1>Online Treasure Hunt</h1>
         <p class="lead">Login through your Facebook/Google account to start playing!</p>
-
       </div>
+      
 
       <!-- Example row of columns -->
       <div class="row">
         
-		
+    
         <div class="col-lg-6 rules " style="border-left:5px solid #1B809E;"  >
           <h2 style="color:#1B809E;font-weight:bold">Rules of the Game</h2>
           <ul class="padsize">
             <li >You will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</li>
-	         <li >Make sure that you type in all the answers in lowercase characters without any space between the words.</li>
-	         <li >Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</li>
-	         <li >Stay in touch with our official hint page which may help you in case you get stuck on any of the levels.</li>
+           <li >Make sure that you type in all the answers in lowercase characters without any space between the words.</li>
+           <li >Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</li>
+           <li >Stay in touch with our official hint page which may help you in case you get stuck on any of the levels.</li>
           </ul>
           
         </div>
 
-
-
+      {% if request.get_full_path = "/" %}
+      
         <div class="col-lg-6 padleft">
         <div class="sidebox">
           <h2 style="font-size:40px;text-align:center">Win Prizes!</h2>
           <p style="text-align:center;font-size:35px">Cash Prize</p>
-		      <p style="text-align:center;font-size:35px"> INR 5k</p>          
+          <p style="text-align:center;font-size:35px"> INR 5k</p>          
         </div>
         
         <!-- <div class="bgscroll col-lg-4 loginbu"style="float:right;padding:20px;text-align:center;margin-top:10px"> -->
@@ -96,6 +96,18 @@
         <p><button onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';" class="btn-lg btn-google"><i class="fa fa-google"></i> | Login with Google</button></p>
         </div>
         </div>
+
+      {% elif request.get_full_path = "/rules/"  %}
+
+      <div class="col-lg-6 padleft">
+        <div class="sidebox" style="padding:15px">
+          <h2 style="font-size:25px;text-align:center">Continue Playing</h2>
+          <a href="/"><button type="button" class="btn btn-primary btn-lg " style="margin-top:10px;">Go Back</button></a>
+        </div>            
+      </div>
+
+      {% endif %}
+      
       </div>
 
       <!-- Site footer -->

@@ -110,3 +110,8 @@ def lboard(request):
 
 
     return render(request, 'lboard.html', {'players': p})
+
+@login_required()
+def rules(request):
+    return render(request, 'index_page.html')
+
