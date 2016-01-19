@@ -26,6 +26,14 @@ class level(models.Model):
     def __unicode__(self):
         return self.text
 
+class Notif(models.Model):
+    text = models.CharField(max_length=200)
+    date = models.DateTimeField(datetime.datetime.now())
+
+    def __unicode__(self):
+        return self.text
+
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
