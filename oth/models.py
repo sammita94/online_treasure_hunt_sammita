@@ -18,7 +18,7 @@ class player(models.Model):
 
 class level(models.Model):
     l_number = models.IntegerField()
-    # photo = models.ImageField(upload_to='/static/images/')
+    image = models.ImageField(upload_to = 'images',default= 'images/level1.jpg')
     text = models.TextField()
     answer = models.CharField(max_length=200)
     numuser = models.IntegerField(default=0)

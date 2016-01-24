@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^lboard/$', views.lboard , name='lboard'),
     url(r'^rules/$', views.rules , name='rules'),
     url(r'^notif/$', views.getNotif, name='getNotif'),
+
 ]
