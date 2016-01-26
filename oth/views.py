@@ -13,7 +13,7 @@ import datetime
 
 m_level = 1
 f_user = ""
-
+last = 2
 
 def index(request):
     user = request.user
@@ -23,6 +23,9 @@ def index(request):
             level = models.level.objects.get(l_number=player.max_level)
             return render(request, 'level.html', {'player': player, 'level': level})
         except:
+            global last
+            if player.max_level > last:
+                return render(request, 'win.html', {'player': player})    
             return render(request, 'finish.html', {'player': player})
     return render(request, 'index_page.html')
 
@@ -87,6 +90,9 @@ def answer(request):
             level = models.level.objects.get(l_number=player.max_level)
             return render(request, 'level.html', {'player': player, 'level': level})
         except:
+            global last
+            if player.max_level > last:
+                return render(request, 'win.html', {'player': player}) 
             return render(request, 'finish.html', {'player': player})
     messages.error(request, "Wrong Answer!, Try Again")
     return render(request, 'level.html', {'player': player, 'level': level})
