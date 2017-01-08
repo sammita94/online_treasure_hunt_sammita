@@ -136,19 +136,20 @@ SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
 #details for fb TEST
 
 #local
-"""SOCIAL_AUTH_FACEBOOK_KEY = 1492885351019524
+SOCIAL_AUTH_FACEBOOK_KEY = 1492885351019524
 SOCIAL_AUTH_FACEBOOK_SECRET = "86f0575c3e6bffc609c42656fc43e694"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "589893822589-k9t7tft5v1627j44bdppt52gn0osbfhf.apps.googleusercontent.com"
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "q-XgrnQTeK8KHhfkQbxAR-it"
-"""
 
+#production
+"""
 SOCIAL_AUTH_FACEBOOK_KEY = 556434777859262
 SOCIAL_AUTH_FACEBOOK_SECRET = "1fe4538f96413d4f2219402de7e9dd1a"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "320555245332-eudkbi26lahph2uon7so99iommmugqqv.apps.googleusercontent.com"
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "jlAhqqYnneowzNb9GlEiu9BL"
-
+"""
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',
@@ -162,5 +163,3 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details'
 )
-
-

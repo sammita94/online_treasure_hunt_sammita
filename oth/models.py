@@ -22,6 +22,9 @@ class level(models.Model):
     text = models.TextField()
     answer = models.CharField(max_length=200)
     numuser = models.IntegerField(default=0)
+    accuracy = models.FloatField(default=0)
+    wrong = models.IntegerField(default=0)
+
 
     def __unicode__(self):
         return self.text
@@ -32,7 +35,6 @@ class Notif(models.Model):
 
     def __unicode__(self):
         return self.text
-
 
 
 class UserProfile(models.Model):

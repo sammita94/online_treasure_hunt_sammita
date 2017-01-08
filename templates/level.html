@@ -1,41 +1,9 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{% static 'img/favicon.png' %}">
-
-    <title>Online Treasure Hunt</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/justified-nav.css' %}" rel="stylesheet">
-
-    
-    <link href="{% static 'css/style_index_page.css' %}" rel="stylesheet">
- 
-
-  </head>
-
-  <body class="bodypad">
-
-    <div class="container" >
-
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-
-        <!--    {{ player.name }} -->
+{% extends 'base.html' %}
+{%block content%}
 
 {% if user and not user.is_anonymous %}
 
-    <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -66,7 +34,7 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron" style="margin-top:15px;background-color:#eee">
-        <img src="{{level.image.url}}" width="200"/>
+        <img src="{{level.image.url}}" width="200px"/>
         
       </div>
 
@@ -106,28 +74,9 @@
       <div class="col-lg-6 padleft">
         <div class="sidebox" style="padding:15px">
           <p style="font-size:25px;text-align:center">Number of people who crossed this level</p>
-          <p style="text-align:center;font-size:35px;color:green">{{level.numuser}}</p>          
+          <p style="text-align:center;font-size:35px;color:green">{{level.numuser}}</p>
+          <p style="text-align:center;font-size:35px;color:blue">Accuracy: {{level.accuracy}}</p>                    
         </div>
       </div>
-      
-      </div>
 
-      <!-- Site footer -->
-      <footer class="footer">
-        <p>&copy; 2016 GNU/Linux users group, NIT Durgapur</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-  </body>
-
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="static/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
-
-</html>
+{%endblock%}

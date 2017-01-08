@@ -25,7 +25,7 @@ def index(request):
         except:
             global last
             if player.max_level > last:
-                return render(request, 'win.html', {'player': player})    
+                return render(request, 'win.html', {'player': player})
             return render(request, 'finish.html', {'player': player})
     return render(request, 'index_page.html')
 
@@ -75,6 +75,7 @@ def answer(request):
         player.score = player.score + 10
         player.timestamp = datetime.datetime.now()
         level.numuser = level.numuser + 1
+        level.accuracy = round(level.numuser/(float(level.numuser + level.wrong)),2)
         level.save()
         #print level.numuser
         # print player.max_level
@@ -94,6 +95,11 @@ def answer(request):
             if player.max_level > last:
                 return render(request, 'win.html', {'player': player}) 
             return render(request, 'finish.html', {'player': player})
+
+    else:
+        level.wrong = level.wrong + 1
+        level.save()
+
     messages.error(request, "Wrong Answer!, Try Again")
     return render(request, 'level.html', {'player': player, 'level': level})
 
