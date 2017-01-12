@@ -10,6 +10,7 @@ import requests.packages.urllib3
 requests.packages.urllib3.disable_warnings()
 from facepy import GraphAPI
 import datetime
+import time
 
 m_level = 1
 f_user = ""
@@ -89,18 +90,23 @@ def answer(request):
         player.save()
         try:
             level = models.level.objects.get(l_number=player.max_level)
+            return render(request, 'level_transition.html')
+
             return render(request, 'level.html', {'player': player, 'level': level})
         except:
             global last
             if player.max_level > last:
                 return render(request, 'win.html', {'player': player}) 
             return render(request, 'finish.html', {'player': player})
+    elif ans=="":
+        pass
 
     else:
         level.wrong = level.wrong + 1
         level.save()
 
-    messages.error(request, "Wrong Answer!, Try Again")
+        messages.error(request, "Wrong Answer!, Try Again")
+
     return render(request, 'level.html', {'player': player, 'level': level})
 
 @login_required()
@@ -124,3 +130,5 @@ def getNotif(request):
     data = serializers.serialize('json',newNotif)
     return HttpResponse(data, content_type='application/json')
 
+# def correct(request):
+#     return render(request, 'level.html', {'player': player, 'level': level})
