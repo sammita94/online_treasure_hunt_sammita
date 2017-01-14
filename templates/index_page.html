@@ -48,7 +48,7 @@
         </div>
         
         <!-- <div class="bgscroll col-lg-4 loginbu"style="float:right;padding:20px;text-align:center;margin-top:10px"> -->
-        <div class="sidebox" style="margin-top:15px">
+        <div class="sidebox border-shadow" style="margin-top:15px">
         <p style="font-size:20px">Login to Start playing!</p>
         <p><button onclick="window.location='{% url 'social:begin' 'facebook' %}?next={{ request.path }}';" class="btn-lg btn-facebook"><i class="fa fa-facebook"></i> | Login with Facebook</button></p>
         <p><button onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';" class="btn-lg btn-google"><i class="fa fa-google"></i> | Login with Google</button></p>
