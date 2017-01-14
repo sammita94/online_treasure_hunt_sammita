@@ -1,0 +1,59 @@
+ .padsize li {font-size:20px;padding:15px;}
+ .sidebox{padding:5px;background:#efefef none repeat scroll 0% 0%;color:black;border-radius:10px;text-shadow:1px 1px 0px #888;border: 3px solid #1B809E;text-align:center}
+ .fontincr li a{font-size: 18px;}
+ .container{box-shadow: 0px 0px 8px #000;padding:5px 50px 0 50px;background-color: #fff;opacity: 0.8;}
+ .padleft{padding-left:200px}
+ .bodypad{
+  background: #1B809E; /* fallback for old browsers */
+  background-image: url("../images/first.jpg")!important;
+/*-webkit-background-size: cover;*/
+/*-moz-background-size: cover;*/
+/*-o-background-size: cover;*/
+/*background-size: cover;*/
+
+  /*background-repeat: no-repeat!important;*/
+  /*background-position: right top!important;*/
+  /*background-attachment: fixed!important;*/
+  /*background: -webkit-linear-gradient(to left, #1B809E , #5691c8);*/
+  /*background: linear-gradient(to left, #1B809E , #5691c8);*/
+  padding-top:0
+}
+ .rules{border:5px solid #eee;border-radius: 5px;margin-bottom: 10px}
+ .nav li  a:hover {
+background-color: #ddd;
+box-shadow:0px 3px 7px rgba(0, 0, 0, 0.15) inset;
+background-image: none;
+}
+.nav li  a{color:#1B809E;}
+
+ @media screen and (max-width: 968px) {
+.container-fluid{
+    padding-right: 10px;
+}
+
+.padleft{padding-left:0}
+}
+
+.navbar-default .navbar-nav > li > a{
+    color:#457fca;
+    font-size: 20px;
+}
+.navbar-default .navbar-nav > li {
+    border: 1px solid #efefef;
+    font-weight: bold;
+}
+
+.container-fluid{
+    padding-right: 0
+}
+
+th,td{
+    padding: 25px!important;
+}
+td{
+    font-size: 17px;
+
+}
+.lboardh1{
+    text-align:center;font-family:impact;font-size:45px;font-weight:bold; text-shadow:2px 2px #457FCA;
+}
