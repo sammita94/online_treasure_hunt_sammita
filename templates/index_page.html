@@ -14,7 +14,7 @@
       </div>
 
       <!-- Jumbotron -->
-      <div class="jumbotron container-fluid" style="margin-top:10px;background-color:#eef;border:5px">
+      <div class="jumbotron container-fluid border-shadow" style="margin-top:10px;background-color:#eef;border:5px">
         <h1 style="font-family: 'Creepster', cursive;font-size:110px;color:#648A93">Online Treasure Hunt</h1>
         <p style="font-family: 'Capriola', sans-serif;font-size:20px;" class="lead">Login through your Facebook/Google account to start playing!</p>
       </div>
@@ -23,12 +23,12 @@
   
   
 	  <audio autoplay="autoplay" loop="true"> 
-		 <source src="/static/music1.mp3" />   
+		 <source src="/static/hp-theme.mp3" />   
 	  </audio> 
 
       <div class="row">
         
-        <div class="col-lg-6 rules " style="font-family: 'Montserrat', sans-serif;;border-left:5px solid #1B809E;"  >
+        <div class="col-lg-6 rules border-shadow" style="font-family: 'Montserrat', sans-serif;;border-left:5px solid #1B809E;"  >
           <h2 style="color:#1B809E;font-weight:bold;font-size:22px">RULES</h2>
           <ul class="padsize">
             <li style = "color:#0C5768;font-size:20px" >You will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</li>
@@ -42,13 +42,13 @@
       {% if request.get_full_path = "/" %}
       
         <div style="font-family: 'Montserrat', sans-serif;" class="col-lg-6 padleft">
-        <div class="sidebox">
+        <div class="sidebox border-shadow">
           <h2 style="text-align:center;font-size:40px;color:#0C6268">CASH PRIZE</p>
           <p style="text-align:center;font-size:50px;color:#0C6268"> INR 4k</p>          
         </div>
         
         <!-- <div class="bgscroll col-lg-4 loginbu"style="float:right;padding:20px;text-align:center;margin-top:10px"> -->
-        <div class="sidebox" style="margin-top:15px">
+        <div class="sidebox border-shadow" style="margin-top:15px">
         <p style="font-size:20px">Login to Start playing!</p>
         <p><button onclick="window.location='{% url 'social:begin' 'facebook' %}?next={{ request.path }}';" class="btn-lg btn-facebook"><i class="fa fa-facebook"></i> | Login with Facebook</button></p>
         <p><button onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';" class="btn-lg btn-google"><i class="fa fa-google"></i> | Login with Google</button></p>
@@ -59,7 +59,7 @@
 
  
       <div class="col-lg-6 padleft">
-        <div class="sidebox" style="padding:15px">
+        <div class="sidebox border-shadow" style="padding:15px">
           <h2 style="font-size:25px;text-align:center">Continue Playing</h2>
           <a href="/"><button type="button" class="btn btn-primary btn-lg " style="margin-top:10px;">Go Back</button></a>
         </div>            
