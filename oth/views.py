@@ -109,7 +109,7 @@ def answer(request):
 
     return render(request, 'level.html', {'player': player, 'level': level})
 
-@login_required()
+
 def lboard(request):
     p= models.player.objects.order_by('-score','timestamp')
     cur_rank = 1
