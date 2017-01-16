@@ -1,4 +1,8 @@
+<!--       <div style="position:absolute; left:35%; top:30%;height: 210px; background-color:yellow;z-index:1;opacity:1">
+      This div has absolute positioning.
+      </div> -->
 {% extends 'base.html' %}
+
 {%block content%}
 
 <!-- Example row of columns -->
@@ -9,7 +13,7 @@
   <nav class="navbar navbar-default">
   <div class="container1">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button style="background-color:#f5f5f5" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span9 class="icon-bar"></span9>
         <span9 class="icon-bar"></span9>
         <span9 class="icon-bar"></span9>                        
@@ -25,7 +29,7 @@
         <li><a style="font-family:'Capriola',sans-serif;" href="/rules">Rules</a></li>
         <li><a style="font-family:'Capriola',sans-serif;" href="/lboard/">Leaderboard</a></li>
         <li class="dropdown">
-          <button class="dropdown-toggle btn btn-default navbar-btn" data-toggle="dropdown" style="margin-left:10px" >
+          <button class="dropdown-toggle btn btn-default navbar-btn" data-toggle="dropdown" style="margin-left:10px;background-color:#f5f5f5" >
            
 <b>{{ user.get_full_name|default:user.username }}</b>
 
@@ -48,8 +52,8 @@
 
       <!-- Jumbotron -->
 
-      <div class="jumbotron border-shadow" style="margin-top:15px;background-color:#eee">
-        <img src="{{level.image.url}}" width="200px"/>
+      <div class="jumbotron border-shadow" style="margin-top:15px;background-color:rgba(255, 255, 255, 0.4);">
+        <img style="" src="{{level.image.url}}" width="200px"/>
         
       </div>
 
@@ -84,7 +88,7 @@
 
       <div class="col-lg-6 padleft">
         <div class="sidebox border-shadow" style="padding:15px">
-          <p style="font-size:24px;text-align:center;opacity:0.7">Number of people who crossed this level</p>
+          <p style="font-size:24px;text-align:center;opacity:0.8">Number of people who crossed this level</p>
           <p style="text-align:center;font-size:35px;color:green">{{level.numuser}}</p>
           <p style="text-align:center;font-size:25px;color:#008080">Accuracy: {{level.accuracy}}</p>                    
         </div>
