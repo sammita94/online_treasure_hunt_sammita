@@ -41,7 +41,8 @@
       <!-- Jumbotron -->
       <div class="jumbotron container-fluid border-shadow" style="margin-top:10px;background-color:rgba(255, 255, 255, 0.5);border:5px">
         <h1 style="font-family: 'Creepster', cursive;font-size:450%;color:#648A93">Online Treasure Hunt</h1>
-        <p style="font-family: 'Capriola', sans-serif;font-size:20px;" class="lead">Login through your Facebook/Google account to start playing!</p>
+        <p style="font-family: 'Capriola', sans-serif;font-size:18px;color:#0C5768" class="lead">The exhilaration is back! Mukti 2017, brings you another thrilling edition of the Online Trueasure Hunt! Wondering what you need to loot the chest? Patience, a few mugs of coffee, resonably fast internet speed and the most important of all, The Art Of Googling! Be faster than the world-class Firebolt, smarter than Ms. Granger and win it all, automagically. So... Ready, Set, HUNT! <br><br> P.S: Thumb rule for this event- "When life gives you questions, Google your answers!"</p> 
+        {% if user.is_anonymous %}<p>Login through your Facebook/Google account to start playing!</p>{%endif%}
       </div>
       
       <!--background audio--> 
@@ -53,47 +54,47 @@
 
 
         
-        <div class="col-lg-6 rules border-shadow" style="font-family: 'Montserrat', sans-serif;;border-left:5px solid #1B809E;"  >
-          <h2 style="color:#1B809E;font-weight:bold;font-size:22px">RULES</h2>
-          <ul class="padsize">
-            <li style = "color:#0C5768;font-size:20px" >You will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</li>
-           <li style = "color:#0C5768;font-size:20px">Make sure that you type in all the answers in lowercase characters without any space between the words.</li>
-           <li style = "color:#0C5768;font-size:20px">Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</li>
-           <li style = "color:#0C5768;font-size:20px">Stay in touch with our official hint page which may help you in case you get stuck on any of the levels.</li>
-          </ul>
-          
-        </div>
-
-      {% if request.get_full_path = "/" %}
+    <div class="col-lg-6 rules border-shadow" style="font-family: 'Montserrat', sans-serif;;border-left:5px solid #1B809E;"  >
+      <h2 style="color:#1B809E;font-weight:bold;font-size:22px">RULES</h2>
+      <ul class="padsize">
+        <li style = "color:#0C5768;font-size:20px" >You will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</li>
+       <li style = "color:#0C5768;font-size:20px">Make sure that you type in all the answers in lowercase characters without any space between the words.</li>
+       <li style = "color:#0C5768;font-size:20px">Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</li>
+       <li style = "color:#0C5768;font-size:20px">Stay in touch with our official hint page which may help you in case you get stuck on any of the levels.</li>
+      </ul>
       
-        <div style="font-family: 'Montserrat', sans-serif;" class="col-lg-6 padleft">
-        <div class="sidebox border-shadow">
-          <h2 style="text-align:center;font-size:40px;color:#0C6268">CASH PRIZE</p>
-          <p style="text-align:center;font-size:50px;color:#0C6268"> INR 4k</p>          
-        </div>
-        
-        <!-- <div class="bgscroll col-lg-4 loginbu"style="float:right;padding:20px;text-align:center;margin-top:10px"> -->
-        <div class="sidebox border-shadow" style="margin-top:15px">
-        <p style="font-size:20px">Login to Start playing!</p>
-        <p><button onclick="window.location='{% url 'social:begin' 'facebook' %}?next={{ request.path }}';" class="btn-lg btn-facebook"><i class="fa fa-facebook"></i> | Login with Facebook</button></p>
-        <p><button onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';" class="btn-lg btn-google"><i class="fa fa-google"></i> | Login with Google</button></p>
-        </div>
-        </div>
+    </div>
 
-      {% elif request.get_full_path = "/rules/"  %}
+  {% if request.get_full_path = "/" %}
+  
+    <div style="font-family: 'Montserrat', sans-serif;" class="col-lg-6 padleft">
+    <div class="sidebox border-shadow">
+      <h2 style="text-align:center;font-size:40px;color:#0C6268">CASH PRIZE</p>
+      <p style="text-align:center;font-size:50px;color:#0C6268"> INR 4k</p>          
+    </div>
+    
+    <!-- <div class="bgscroll col-lg-4 loginbu"style="float:right;padding:20px;text-align:center;margin-top:10px"> -->
+    <div class="sidebox border-shadow" style="margin-top:15px">
+    <p style="font-size:20px">Login to Start playing!</p>
+    <p><button onclick="window.location='{% url 'social:begin' 'facebook' %}?next={{ request.path }}';" class="btn-lg btn-facebook"><i class="fa fa-facebook"></i> | Login with Facebook</button></p>
+    <p><button onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';" class="btn-lg btn-google"><i class="fa fa-google"></i> | Login with Google</button></p>
+    </div>
+    </div>
 
- 
-      <div class="col-lg-6 padleft">
-        <div class="sidebox border-shadow" style="padding:15px">
-          <h2 style="font-size:25px;text-align:center">Continue Playing</h2>
-          <a href="/"><button type="button" class="btn btn-primary btn-lg " style="margin-top:10px;">Go Back</button></a>
-        </div>            
-      </div>
+  {% elif request.get_full_path = "/rules/"  %}
 
-      {% endif %}
-      
-      </div>
 
-     {%endblock%}
+  <div class="col-lg-6 padleft">
+    <div class="sidebox border-shadow" style="padding:15px">
+      <h2 style="font-size:25px;text-align:center">Continue Playing</h2>
+      <a href="/"><button type="button" class="btn btn-primary btn-lg " style="margin-top:10px;">Go Back</button></a>
+    </div>            
+  </div>
+
+  {% endif %}
+  
+  </div>
+
+ {%endblock%}
      
     

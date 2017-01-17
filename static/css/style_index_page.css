@@ -8,9 +8,10 @@
   display: inline-block;
   padding:8px 14px 8px 14px;
 }
+
 .landing-nav .navbar-nav >li > a{
 font-family:'Capriola',sans-serif;font-size:200%!important;color:#1B809E!important;
-  }
+}
 
 .rules .form-control{
   background-color: #ddd;
@@ -25,21 +26,21 @@ font-family:'Capriola',sans-serif;font-size:200%!important;color:#1B809E!importa
   background-color:rgba(255, 255, 255, 0.4);
 }
 
- .padsize li {font-size:20px;padding:15px;}
- .sidebox{padding:5px;color:black;border-radius:10px;text-shadow:1px 1px 0px #888;border: 3px solid #1B809E;text-align:center;background-color:rgba(255, 255, 255, 0.4);}
- .fontincr li a{font-size: 18px;}
- .container{box-shadow: 0px 0px 8px #000;padding:5px 50px 0 50px;background-color: #fff;
- background:rgba(255,255,255,0.7)
+.padsize li {font-size:20px;padding:15px;}
+.sidebox{padding:5px;color:black;border-radius:10px;text-shadow:1px 1px 0px #888;border: 3px solid #1B809E;text-align:center;background-color:rgba(255, 255, 255, 0.4);}
+.fontincr li a{font-size: 18px;}
+.container{box-shadow: 0px 0px 8px #000;padding:5px 50px 0 50px;background-color: #fff;
+background:rgba(255,255,255,0.7)
 }
 
- .container1{box-shadow: 0px 0px 8px #000;background-color: rgba(255, 255, 255, 0.4);}
- .navbar-right{margin-right: 5px}
- .border-shadow{box-shadow: 0px 0px 8px #000}
- .nav-justified {background-color: white}
- .padleft{padding-left:200px}
- .bodypad{
-  background: #1B809E; /* fallback for old browsers */
-  background-image: url("../images/harry-potter-14.jpg")!important;
+.container1{box-shadow: 0px 0px 8px #000;background-color: rgba(255, 255, 255, 0.4);}
+.navbar-right{margin-right: 5px}
+.border-shadow{box-shadow: 0px 0px 8px #000}
+.nav-justified {background-color: white}
+.padleft{padding-left:200px}
+.bodypad{
+background: #1B809E; /* fallback for old browsers */
+background-image: url("../images/harry-potter-14.jpg")!important;
 
 
 
@@ -55,8 +56,8 @@ background-size: cover;
   /*background: linear-gradient(to left, #1B809E , #5691c8);*/
   padding-top:0
 }
- .rules{border:5px solid #eee;border-radius: 5px;margin-bottom: 10px;background-color:rgba(255, 255, 255, 0.4)}
- .nav li  a:hover {
+.rules{border:5px solid #eee;border-radius: 5px;margin-bottom: 10px;background-color:rgba(255, 255, 255, 0.4)}
+.nav li  a:hover {
 background-color: #ddd;
 box-shadow:0px 3px 7px rgba(0, 0, 0, 0.15) inset;
 background-image: none;
